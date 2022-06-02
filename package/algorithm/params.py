@@ -51,10 +51,11 @@ def getParams(mode):
 				'rawpyArgs': {
 					'demosaic_algorithm' : rawpy.DemosaicAlgorithm.AHD,  # used in HDR+ supplement
 					'half_size' : False,
-					'use_camera_wb' : True,
+					'use_camera_wb' : False,
 					'use_auto_wb' : False,
+					'user_wb': [1.0,1.0,1.0,1.0],
 					'no_auto_bright': True,
-					'output_color' : rawpy.ColorSpace.sRGB,  # sRGB
+					'output_color' : rawpy.ColorSpace.raw,  # sRGB
 					'output_bps' : 8
 				},
 				'writeMotionFields': False,
@@ -70,10 +71,11 @@ def getParams(mode):
 				'rawpyArgs': {
 					'demosaic_algorithm' : rawpy.DemosaicAlgorithm.AHD,  # used in HDR+ supplement
 					'half_size' : False,
-					'use_camera_wb' : True,
+					'use_camera_wb' : False,
 					'use_auto_wb' : False,
+					'user_wb': [1.0,1.0,1.0,1.0],
 					'no_auto_bright': True,
-					'output_color' : rawpy.ColorSpace.sRGB,  # maybe try rawpy.colorSpace.raw and apply a color matrix in .txt?
+					'output_color' : rawpy.ColorSpace.raw,  # maybe try rawpy.colorSpace.raw and apply a color matrix in .txt?
 					'gamma': (1, 1),  # gamma correction not applied by rawpy
 					'output_bps' : 16
 				},
@@ -96,24 +98,27 @@ def getParams(mode):
 				'rawpyArgs': {
 					'demosaic_algorithm' : rawpy.DemosaicAlgorithm.AHD,  # used in HDR+ supplement
 					'half_size' : False,
-					'use_camera_wb' : True,
+					#'use_camera_wb' : True,
+                    'use_camera_wb': False,
+					'user_wb': [1.0,1.0,1.0,1.0],
 					'use_auto_wb' : False,
 					'no_auto_bright': True,
-					'output_color' : rawpy.ColorSpace.sRGB,
+					#'output_color' : rawpy.ColorSpace.sRGB,
+                    'output_color' : rawpy.ColorSpace.raw,
 					'gamma': (1, 1),  # gamma correction not applied by rawpy
 					'output_bps' : 16
 				},
 				'writeReferenceImage': False,
-				'writeGammaReference': True,
+				'writeGammaReference': False,
 				'writeMergedImage': False,
-				'writeGammaMerged': True,
+				'writeGammaMerged': False,
 				'writeShortExposure': False,
 				'writeLongExposure': False,
 				'writeFusedExposure': False,
 				'writeLTMImage': False,
 				'writeLTMGamma': False,
 				'writeGTMImage': False,
-				'writeReferenceFinal': True,
+				'writeReferenceFinal': False,
 				'writeFinalImage': True
 			}
 		}
